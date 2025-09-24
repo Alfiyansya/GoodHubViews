@@ -191,7 +191,7 @@ cd GoodHubViews
 
 ## 🗺️ Coming Up
 
-* [ ] Release APKs via GitHub Actions
+* [✅] Release APKs via GitHub Actions
 * [ ] Advanced filters (location, language)
 * [ ] Manage & clear user search history
 * [ ] UI test suite
