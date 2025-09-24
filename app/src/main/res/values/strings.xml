@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name" translatable="false">GoodHub</string>
+    <string name="home">Home</string>
+    <string name="profile">Profile</string>
+    <string name="search">Search</string>
+    <string name="text_failed_load">Failed to load data, please try again</string>
+    <string name="item_image">Item Image</string>
+    <string name="text_primary">Text Primary</string>
+    <string name="user_image">User Image</string>
+    <string name="detail_name_dummy" translatable="false">alfiansyah</string>
+    <string name="detail_username_dummy" translatable="false">alfiyansya</string>
+    <string name="location_dummy">location</string>
+    <string name="blog_dummy" translatable="false">blog</string>
+    <string name="data_number_dummy" translatable="false">0</string>
+    <string name="tab_layout" translatable="false">tab layout</string>
+    <string name="back_image" translatable="false">Back Image</string>
+    <string name="preview_image" translatable="false">Preview Image</string>
+    <string name="image_view" translatable="false">Image View</string>
+    <string name="download_image" translatable="false">Download Image</string>
+    <string name="bio">bio</string>
+    <string name="company">company</string>
+    <string name="followers">Followers</string>
+    <string name="following">Following</string>
+    <string name="repository">Repository</string>
+</resources>

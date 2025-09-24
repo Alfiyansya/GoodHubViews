@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="achmad_alfiansyah">Achmad Alfiansyah</string>
+    <string name="alert_dialog">Alert Dialog</string>
+    <string name="yes">YES</string>
+    <string name="ok">OK</string>
+    <string name="all_permission_access_required" translatable="false">Diperlukan semua izin untuk melanjutkan,\ntekan OK dan beri semua izin untuk menggunakan aplikasi</string>
+    <string name="item_image">item_image</string>
+</resources>

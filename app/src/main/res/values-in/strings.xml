@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="home">Beranda</string>
+    <string name="profile">Profil</string>
+    <string name="search">Cari</string>
+    <string name="text_failed_load">Gagal memuat data,silahkan coba lagi</string>
+    <string name="item_image">Gambar Item</string>
+    <string name="text_primary">Teks Utama</string>
+    <string name="user_image">Gambar User</string>
+    <string name="location_dummy">lokasi</string>
+</resources>
