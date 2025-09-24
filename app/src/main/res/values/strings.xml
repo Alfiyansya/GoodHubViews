@@ -17,9 +17,9 @@
     <string name="preview_image" translatable="false">Preview Image</string>
     <string name="image_view" translatable="false">Image View</string>
     <string name="download_image" translatable="false">Download Image</string>
-    <string name="bio">bio</string>
+    <string name="bio" translatable="false">bio</string>
     <string name="company">company</string>
     <string name="followers">Followers</string>
     <string name="following">Following</string>
-    <string name="repository">Repository</string>
+    <string name="repository" translatable="false">Repository</string>
 </resources>

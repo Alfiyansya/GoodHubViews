@@ -8,4 +8,7 @@
     <string name="text_primary">Teks Utama</string>
     <string name="user_image">Gambar User</string>
     <string name="location_dummy">lokasi</string>
+    <string name="company">perusahaan</string>
+    <string name="followers">Pengikut</string>
+    <string name="following">Mengikuti</string>
 </resources>
