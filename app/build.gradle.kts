@@ -82,7 +82,7 @@ dependencies {
     implementation(libs.material)
     implementation(libs.lottie)
     implementation(libs.shimmer)
-
+    testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
     // Hilt

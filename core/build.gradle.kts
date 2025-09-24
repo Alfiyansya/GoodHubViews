@@ -86,7 +86,7 @@ dependencies {
 
     // Chucker HANYA ke build 'debug'
     debugImplementation(libs.chucker)
-
+    testImplementation(libs.junit)
     // Chuchker versi 'no-op' (kosong) HANYA ke build 'release'
     releaseImplementation(libs.chucker.no.op)
 }
