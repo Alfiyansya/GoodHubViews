@@ -7,6 +7,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.repeatOnLifecycle
 import androidx.recyclerview.widget.GridLayoutManager
 import com.alfiansyah.goodhubviews.core.data.Resource
 import com.alfiansyah.goodhubviews.core.databinding.ItemUserBinding
@@ -18,6 +21,7 @@ import com.alfiansyah.goodhubviews.databinding.FragmentHomeBinding
 import com.alfiansyah.goodhubviews.detail.DetailGithubUserActivity
 import com.alfiansyah.goodhubviews.image_preview.PreviewImageActivity
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class HomeFragment : Fragment() {
@@ -41,19 +45,36 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         if (activity != null){
             setupAdapter()
-
-            homeViewModel.githubUser.observe(viewLifecycleOwner) { githubUser ->
-                if (githubUser != null) {
+            binding.swipe.setOnRefreshListener {
+                showUserGithubData(false)
+                // Menyembunyikan berbagai layout sebelum refresh
+                showProgressBar(true)
+                showFailedLoadData(false)
+                homeViewModel.refreshGithubUsers()
+                showUserGithubData(true)
+            }
+            observeUserState()
+        }
+    }
+    private fun observeUserState(){
+        viewLifecycleOwner.lifecycleScope.launch {
+            viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED){
+                homeViewModel.githubUserState.collect{ githubUser ->
                     when (githubUser) {
                         is Resource.Loading -> showProgressBar(true)
                         is Resource.Success -> {
+                            binding.swipe.isRefreshing = false
                             showFailedLoadData(false)
                             showProgressBar(false)
                             homeAdapter.setItems(githubUser.data ?: emptyList())
+                            showUserGithubData(true)
                         }
                         is Resource.Error -> {
+                            binding.swipe.isRefreshing = false
                             showProgressBar(false)
+                            showUserGithubData(false)
                             showFailedLoadData(true)
+
                         }
                     }
                 }
@@ -94,7 +115,9 @@ class HomeFragment : Fragment() {
     private fun showFailedLoadData(isFailed: Boolean) {
         binding.animFailedDataLoad.visibility = if (isFailed) View.VISIBLE else View.GONE
         binding.tvFailed.visibility = if (isFailed) View.VISIBLE else View.GONE
-
+    }
+    private fun showUserGithubData(isDataReady : Boolean){
+        binding.githubUserRv.visibility = if (isDataReady) View.VISIBLE else View.GONE
     }
     override fun onDestroy() {
         super.onDestroy()
